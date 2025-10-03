@@ -1,0 +1,105 @@
+\documentclass{article}
+\RequirePackage{graphicx} % Required for inserting images
+\RequirePackage{natbib}
+\RequirePackage{amsmath,amsfonts,amssymb}
+\RequirePackage{graphicx,xcolor}
+\RequirePackage{gensymb}
+\title{Bubble Plumes - Tabletop Lab Experiment Proposal V1}
+\author{Maggie Kou}
+\date{October 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Background on subglacial plumes \citep{hewitt_subglacial_2020}. 
+
+The vertical length scales for these ice shelves can range from 100 m to 2 km \citep{jenkins_observation_2010}.
+The turbulent plume forms from two buoyant sources: 1) discharge from the subglacial meltwater, 2) submarine ice melt. In both cases, the rejected liquid water is near fresh with a density deficit $\approx 0.028$ \citep{hewitt_subglacial_2020}. For melting, energy required also cools the surrounding waters with density deficit $~ 0.024$.
+
+High molecular Pr (13.8) and Sc (2432) for ocean water means a thin viscous boundary layer within the thermal and saline boundaries where temperature and salinity experiences the largest variation \citep{steele_role_1989}. 
+
+Observations by \citep{shepherd_warm_2004}. where they occur: \\
+\cite{mcphee_revisiting_2008} present measurements of turbulent heat and salinity at Svalbard fjord under growing ice and compare to a model of double diffusion with $R$, a ratio between the interfacial heat exchange coefficient and the interfacial salt coefficient. 
+their significance: \\
+
+For homogeneous ambient salinity and temperature, both the theory and experiments of \cite{kerr_dissolution_2015} showed that the ablation velocity and interface temperature are uniform with height once the wall plume is turbulent (heights greater than or equal to 10 cm). In contrast, McConnochie and Kerr [2016a] showed that the plume velocity increases with height to the 1/3 power. 
+
+Equivalent results were also found using direct numerical simulations on a similar physical scale to the experiments [Gayen et al., 2016]. 
+
+\subsection{Key Parameters and Models}
+
+\subsubsection{Constitutive Relations}
+Equation of state for the density of the ocean water is usually given by a linear approx:
+\[\frac{\rho_a - \rho}{\rho_o} = \beta_S (S_a - S) - \beta_T (T_a - T)\]
+Where th subscript a denotes a quantity of the ambient conditions.$\beta_S$ and $\beta_T$ are expansion coefficients. Salinity exerts primary control on buoyancy since $T_a - T$ is very low \citep{hewitt_subglacial_2020}.
+
+The freezing temperature is given by a linear liquidus function:
+\[T_L(S,z) = T_o + \lambda z - \Gamma S\]
+Where $T_o$ is a reference temperature, $\lambda$ is the slope of the freezing point depth, and $\Gamma$ is the saline dependence \citep{hewitt_subglacial_2020}.
+
+\subsubsection{Key Nondimensional Numbers}
+For laminar boundary layers next to a flat plate, the thickness of the velocity, thermal, and saline boundary layer thicknesses are given \citep{schlichting_boundary-layer_2017} in terms of the Prandtl, Schmidt, and Lewis numbers respectively: 
+\[\frac{\delta_T}{\delta_u} \simeq Pr^{-1/2} \approx 0.3\]
+\[\frac{\delta_S}{\delta_u} \simeq Sc^{-1/2} \approx 0.02\]
+\[\frac{\delta_S}{\delta_T} \simeq Le^{-1/2} \approx 0.07\]
+
+Grassof number for when plume becomes turbulent:
+\[Gr = \frac{g (\rho_w - \rho_{\infty})l^3}{\rho_{\infty} \nu^2} \geq 10^9\]
+This happens at length scales greater than 0.5 m for oceanic salinity and temperatures \citep{josberger_laboratory_1981}.
+
+The Stanton numbers correspond to the transfer coefficients, given by \citep{jenkins_observation_2010, hewitt_subglacial_2020} as:
+\[St_T = C_d^{1/2} \Gamma_T\]
+\[St_S = C_d^{1/2} \Gamma_S\]
+\[St_{turbulent} = C_d^{1/2} \Gamma_{turbulent}\]
+
+\subsubsection{Plume Models}
+\cite{wells_geophysical-scale_2008} consider the formation of a turbulent plume off a vertical plate and describe a laminar region, a turbulent region with a laminar sublayer set by a balance between the viscosity and the buoyancy, and the outer plume by inertia and buoyancy, and finally, the top-most region where the sublayer width is controlled by the shear imposed by the turbulent plume. They give lengthscales and corresponding $Re_z$ and $Nu$ thresholds.
+
+\subsubsection{Melt/Dissolution Models}
+Starting with an energy balance at the phase change interface: 
+\[\rho_i V L_i = \mathrm{Q_{conduction} \;} + \mathrm{Q_{convection} \;} \]
+Where the second term is given by the convective mixing by the turbulent plume. \cite{jenkins_observation_2010} propose and test the turbulence closure which associates this second term to a frictional velocity ($u_{\tau}$) given below:
+\[ \left\rho_i V L_i = \rho_i c_i \kappa_i \frac{\partial T_i}{\partial z} \right|_z - \rho_w c_w u_{\tau} \Gamma_T [T_{fp} (S_b, P_b) - T_w]\]
+Where the subscripts $i,b,w,fp$ refer to the ice, boundary, water, and freezing-point values respectively. $\Gamma_{turbulence}$ is the turbulent transfer coefficient, given below: 
+\[\Gamma_{turbulence} = \frac{q^T_b}{\rho_w c_w V[T_f(S_b,P_b) - T_w]}\]
+$q^T_b$ is the turbulent heat flux, analogous to the thermal Stanton number, used in frictional velocity rather than boundary flow. 
+
+Three separate parameters, $C_d$, $\Gamma_S$, and $\Gamma_T$ may be necessary for the turbulence closure but due to the thin viscous inner layer, they appear to be experimentally constant outside the sublayer \citep{jenkins_observation_2010}.
+
+
+\subsection{Previous Experiments}
+\cite{josberger_laboratory_1981} ran a lab experiment of melting ice walls in uniform far field salinity ($S_{\infty}$) and temperature ($T_{\infty}$), for $30 \% \leq S_{\infty} \leq 35 \%$ and $T_{\infty} \leq 20 \degree C$ (akin to bulk Oceanic conditions), they find that the boundary flow develops a bidirctional laminar flow from varying salinity and temperature boundary layer sizes which allows the inner to transition into a turbulent plume and the outer to sink to the bottom. 
+
+TODO: look into Straneo and Cenedese 2015 for greenland/arctic ocean stuff
+
+\section{Experimental Designs}
+\subsection{Control Tests}
+These series of controlled tests are designed to illustrate the melting and heat/mass transport by the turbulent plume only (in the natural ocean context). 
+\subsubsection{Uniform $T_{\infty}$, $S_{\infty}$, Melting only }
+\subsubsection{Dissolution and Melting only}
+\subsubsection{Dissolution and Melting with Subglacial Plume}
+\subsection{Full Experiments}
+\subsection{Future experiments}
+The lengthscale of these flows are often large enough that they experience Coriolis effects. See
+
+\section{Experimental Apparatus}
+\subsection{General Apparatus}
+Thermal insulation
+\subsection{Oceanic Conditions}
+\subsection{Ice}
+\subsection{Measurement}
+\begin{enumerate}
+    \item Temperature measurement - in the ice, at the surface, and some distance from the plume; various heights 
+    \item Salinity - sampled at various heights outside of the plume
+\end{enumerate}
+\subsection{Visualization}
+\begin{enumerate}
+    \item camera
+    \item dye
+\end{enumerate}
+
+\bibliographystyle{apalike}
+\bibliography{references}
+\end{document}
