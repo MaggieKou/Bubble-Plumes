@@ -5,6 +5,7 @@
 \RequirePackage{graphicx,xcolor}
 \RequirePackage{gensymb}
 \usepackage{todonotes}
+\usepackage{hyperref}
 \title{Subglacial Plume vs Bubbles - Tabletop Lab Experiment Proposal V1}
 \author{Maggie Kou}
 \date{October 2025}
@@ -30,24 +31,21 @@ High molecular Pr (13.8) and Sc (2432) for ocean water means a thin viscous boun
 Observations by \citep{shepherd_warm_2004} indicate that ablation rate may be linear in $\triangle T$ (the temperature difference between the ambient  temperature and the liquidus temperature.  
 \cite{mcphee_revisiting_2008} present measurements of turbulent heat and salinity at Svalbard fjord under growing ice and compare to a model of double diffusion with $R$, a ratio between the interfacial heat exchange coefficient and the interfacial salt coefficient. 
 
-For homogeneous ambient salinity and temperature, both the theory and experiments of \cite{kerr_dissolution_2015} showed that the ablation velocity and interface temperature are uniform with height once the wall plume is turbulent (heights greater than or equal to 10 cm). In contrast, McConnochie and Kerr [2016a] showed that the plume velocity increases with height to the 1/3 power. 
-
-Equivalent results were also found using direct numerical simulations on a similar physical scale to the experiments [Gayen et al., 2016]. 
-\todo{Read and summarize Gayen paper}
+For homogeneous ambient salinity and temperature, both the theory and experiments of \cite{kerr_dissolution_2015, mcconnochie_effect_2016, mcconnochie_turbulent_2016, mcconnochie_enhanced_2017} showed that the ablation velocity and interface temperature are uniform with height once the wall plume is turbulent (heights $\geq$ 10 cm) while plume velocity increases with height to the 1/3 power. Equivalent results were obtained by \cite{gayen_simulation_2016}. 
 
 \subsection{Key Parameters and Models}
 
 \subsubsection{Constitutive Relations}
 Equation of state for the density of the ocean water is usually given by a linear approx:
 \[\frac{\rho_a - \rho}{\rho_o} = \beta_S (S_a - S) - \beta_T (T_a - T)\]
-Where th subscript a denotes a quantity of the ambient conditions.$\beta_S$ and $\beta_T$ are expansion coefficients. Salinity exerts primary control on buoyancy since $T_a - T$ is very low \citep{hewitt_subglacial_2020}.
+Where the subscript a denotes a quantity of the ambient conditions. $\beta_S$ and $\beta_T$ are expansion coefficients. Salinity exerts primary control on buoyancy since $T_a - T$ is very low \citep{hewitt_subglacial_2020}.
 
 The freezing temperature is given by a linear liquidus function:
 \[T_L(S,z) = T_o + \lambda z - \Gamma S\]
 Where $T_o$ is a reference temperature, $\lambda$ is the slope of the freezing point depth, and $\Gamma$ is the saline dependence \citep{hewitt_subglacial_2020}.
 
 \subsubsection{Key Nondimensional Numbers}
-For laminar boundary layers next to a flat plate, the thickness of the velocity, thermal, and saline boundary layer thicknesses are given \citep{schlichting_boundary-layer_2017} in terms of the Prandtl, Schmidt, and Lewis numbers respectively: 
+For laminar boundary layers next to a flat plate, the thickness of the velocity, thermal, and saline boundary layer thicknesses are given \citep{schlichting_boundary-layer_2017} in terms of the Prandtl ($Pr = \frac{\nu}{\kappa_T}$), Schmidt ($Sc = \frac{\nu}{\kappa_S}$, and Lewis ($Le = Sc/Pr$) numbers respectively: 
 \[\frac{\delta_T}{\delta_u} \simeq Pr^{-1/2} \approx 0.3\]
 \[\frac{\delta_S}{\delta_u} \simeq Sc^{-1/2} \approx 0.02\]
 \[\frac{\delta_S}{\delta_T} \simeq Le^{-1/2} \approx 0.07\]
@@ -66,6 +64,9 @@ Where $g$ is the gravitational constant, $\alpha$ us the thermal expansion coeff
 Empirically, \cite{warner_experimental_1968} find that:
 \[Nu = 0.10 Ra^{1/3}\]
 
+The Stefan number provides a ratio of the sensible heat to the latent heating:
+\[Sf = \frac{\rho_s L_s}{\rho_w c_w(T_w - T_i)}\]
+
 The Stanton numbers correspond to the transfer coefficients, given by \citep{jenkins_observation_2010, hewitt_subglacial_2020} as:
 \[St_T = C_d^{1/2} \Gamma_T\]
 \[St_S = C_d^{1/2} \Gamma_S\]
@@ -73,6 +74,8 @@ The Stanton numbers correspond to the transfer coefficients, given by \citep{jen
 \cite{mcphee_revisiting_2008} define a lumped Stanton number to approximate the melting equations with limited constraints:
 \[St = C_d^{1/2} \Gamma_{TS}\]
 
+Some literature \citep{gayen_simulation_2016} use the buoyancy ratio to denote the contributions between salinity vs temperature: 
+\[R_{\rho} = \frac{\beta_S (S_w - S_i)}{\beta_T (T_w - T_i)}\]
 \subsubsection{Melt/Dissolution Models}
 
 \cite{hewitt_subglacial_2020} define a modified latent heat: 
@@ -171,7 +174,7 @@ These series of controlled tests are designed to illustrate the melting and heat
     \item the average velocity of the plume. 
 \end{enumerate}
 \subsubsection{Uniform $T_{\infty}$, $S_{\infty}$, No Subglacial Discharge}
-This test will mimic \cite{kerr_dissolution_2015} with a uniform ambient salinity and temperature. Key measurements are 1) the rate of ice dissolution/melting, the temperature at the boundary as this happens, and the turbulent plume's corresponding velocity and shape (can we estimate a length scale for entrainment as in \cite{bacot_bubble_2022}).
+This test will mimic \cite{kerr_dissolution_2015} with a uniform ambient salinity and temperature. Key measurements are 1) the rate of ice dissolution/melting, the temperature at the boundary as this happens, and the turbulent plume's corresponding velocity and shape. Notably, none of the past experiments seem to measure the continuous density distribution. It would be nice to estimate a length scale for entrainment as in \cite{bacot_bubble_2022}.
 
 \subsubsection{Two-tier stratified $T_{\infty}$, $S_{\infty}$, No Subglacial Discharge}
 Potentially skip but just as an analog to the Greenland fjords and to reference with \cite{cenedese_impact_2016}.
@@ -183,12 +186,20 @@ Vary:
 \begin{enumerate}
     \item subglacial discharge strength
     \item stratification strength (density) - likely temperature first
+    \item ice topology (perhaps shallower shelf extents which has not been done by the experiments of \cite{mcconnochie_enhanced_2017} etc... 
 \end{enumerate}
 
 \subsection{Full Experiments}
-Finally, it's time to add a secondary barrier plume!
+Finally, it's time to add a secondary barrier plume! The main parameters to adjust are: 
+\begin{enumerate}
+    \item strength of plume
+    \item normal distance from the ice wall 
+    \item size of bubbles
+\end{enumerate}
+Further, I would like to image the extent of this plume/mixing with the near-shelf water as well. 
+
 \subsection{Future experiments}
-The lengthscale of these flows are often large enough that they experience Coriolis effects. See
+The lengthscale of these flows are often large enough that they experience Coriolis effects. 
 
 \section{Experimental Apparatus}
 \subsection{General Apparatus}
@@ -196,7 +207,10 @@ The lengthscale of these flows are often large enough that they experience Corio
 
 \cite{kerr_dissolution_2015} also use a 20 mm thick layer of acrylic with a 2 mm thick outer layer, separated by a 18 mm air gap to insulate the ice. 
 \subsection{Oceanic Conditions}
+For a set of experiments, a stably stratified salinity distribution and varying temperature distribution is required for the ambient surrounding waters. This can be accomplished with a two-bucket drip method as outlined by \cite{oster_density_1963}, or as a series of horizontally stratified layers with the spinning plate apparatus in the lab at DAMTP.
 \subsection{Ice}
+The ice will need to be produced and frozen without bubbles and in a large block (>1 m tall). This should be sorted out with the lab people. 
+\todo{Speak with }
 \subsection{Bubble Curtain}
 Nozzle, adjustability for distance away from the ice shelf. 
 \subsection{Measurement}
@@ -204,6 +218,11 @@ Nozzle, adjustability for distance away from the ice shelf.
     \item Temperature measurement - in the ice, at the surface, and some distance from the plume; various heights. \cite{cenedese_impact_2016} use TenHOBO Pro v2 temperature dataloggers.
     
     \item Salinity - sampled at various heights outside of the plume with a traversing conductivity-temperature probe
+
+    \item Ablation rate - usually done by taking two adjacent pictures, \cite{mcconnochie_effect_2016} take them 25 - 50 mins apart with repetition for the variance
+
+    \item Density - \cite{bacot_bubble_2022} use a Anton PAAR DMA5000 density meter and dye attenuation with 
+    \href{https://www.dalzielresearch.com/}{DigiFlow}.
 \end{enumerate}
 \subsection{Visualization}
 \begin{enumerate}
