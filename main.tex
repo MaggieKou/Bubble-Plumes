@@ -6,218 +6,460 @@
 \RequirePackage{gensymb}
 \usepackage{todonotes}
 \usepackage{hyperref}
-\title{Subglacial Plume vs Bubbles - Tabletop Lab Experiment Proposal V1}
+\title{Bubble barriers to ice-shelf under-melting}
 \author{Maggie Kou}
 \date{October 2025}
 
 \begin{document}
 
 \maketitle
+%\tableofcontents
+%\listoftodos
 
-\listoftodos
 \section{Introduction}
-Subglacial plumes occur at the front of ice shelves. The vertical length scales for these ice shelves can range from 100 m to 2 km \citep{jenkins_observation_2010}.
-The turbulent plume forms from two buoyant sources: 1) submarine ice melt and 2) subglacial discharge. In both cases, the rejected liquid water is near fresh with a density deficit $\approx 0.028$ \citep{hewitt_subglacial_2020}. For melting, energy required also cools the surrounding waters with density deficit $ \approx 0.024$. These are represented in \ref{fig:gen-diagram-hewitt} and labelled $\dot m $ and $q_{sg}$ respectively.
+Bubble plumes have been shown to be effective at separating buoyancy-driven flows in a variety of settings \cite{bacot_bubble_2022}. We are interested in investigating the use of these curtains in separating heat exchange between the semi-infinite heat reservoir of the ocean (with a stratified structure) from the finite heat reservoir of an ice shelf. 
 
-\begin{figure} [h]
+The box model below provides a general overview of the quanitites of interest in this experiment: 
+\begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{Hewitt-fig3.png}
-    \caption{A figure of the presumed salinity and temperature profiles next to the ice shelf and plume. b) shows typical oceanic profiles; c) shows typical plume profiles overlayed in lighter colours}
-    \label{fig:gen-diagram-hewitt}
+    \includegraphics[width=1\linewidth]{box model.png}
+    \caption{Box model for heat and mass exchange through the bubble curtain-ice system. $\dot q$s denote heat fluxes.}
+    \label{fig:box-model}
 \end{figure}
 
-High molecular Pr (13.8) and Sc (2432) for ocean water means a thin viscous boundary layer within the thermal and saline boundaries where temperature and salinity experiences the largest variation \citep{steele_role_1989}, consistent with lab experiments, and general models for buoyant plumes rising next to vertical plates \cite{wells_geophysical-scale_2008}. 
+We are taking the momentum of the curtain to be much greater than the horizontal buoyancy pressure, where the two recirculation cells next to the fluid jet (or bubble plume) reaches a steady-state length as in the experiments and theory of \cite{bacot_bubble_2022}. The recirculation zone on either side creates a gravity current propagating into the lighter or denser fluid, primarily responsible for the mass and heat transfer across the curtain. The heat transfer from the near-shelf box is primarily controlled through the boundary layer. We assume at geophysical scales, there is a large turbulent buoyant plume which provides enough shear to control the layer thickness as in the final regime of \cite{wells_geophysical-scale_2008}.
 
-Observations by \citep{shepherd_warm_2004} indicate that ablation rate may be linear in $\triangle T$ (the temperature difference between the ambient  temperature and the liquidus temperature.  
-\cite{mcphee_revisiting_2008} present measurements of turbulent heat and salinity at Svalbard fjord under growing ice and compare to a model of double diffusion with $R$, a ratio between the interfacial heat exchange coefficient and the interfacial salt coefficient. 
+I will fix the temperature and salinity of the ice and ocean assuming they are infinitely large in comparison to the lengthscales $x$ (the size of the near-shelf box) and $L_{cell}$ (the length of the recirculation cells). To first order, we want to see how the temperature in the near-shelf box evolves over time relative to the parameters provided $x$, $H$, $u_{jet}$, and the temperature and salinity of either side.  
 
-For homogeneous ambient salinity and temperature, both the theory and experiments of \cite{kerr_dissolution_2015, mcconnochie_effect_2016, mcconnochie_turbulent_2016, mcconnochie_enhanced_2017} showed that the ablation velocity and interface temperature are uniform with height once the wall plume is turbulent (heights $\geq$ 10 cm) while plume velocity increases with height to the 1/3 power. Equivalent results were obtained by \cite{gayen_simulation_2016}. 
+\subsection{Experimental Questions}
+The following experimental questions are based on a simplified model of the system, with only the consideration of steady-state results. This will be my primary focus for year 1. 
+\begin{enumerate}
+    \item Which range of steady-states can be supported by this system? What are their final density differences as a function of the amount of forcing through glacier melt: $Q_{fresh}$, industrial input $Q_{air}$, and the vertical distance over which we segment $H$?
+    \item How does changing the distance of the curtain from the near-shelf region $x$ affect the existence and formation of these steady-states?
+    \item Can we 'nudge' a system into a steady state with enough forcing? vary $x$, $H$, $Q_{air}$, $Q_{fresh}$?
+\end{enumerate}
 
-\subsection{Key Parameters and Models}
+For years 2 - 2.5, I am focused on the impact of stratification on the near-shelf features
+\begin{enumerate}
+    \item experiments on the distance $x < L_{cell}$, how will this interact with the near-shelf freshwater plume? How does the moxing impact the ocean stratification?
+    \item Where is flow being redirected?
+    \item what is the impact on the micro-organisms and ecosystem near the ice sheet?
+\end{enumerate}
 
-\subsubsection{Constitutive Relations}
-Equation of state for the density of the ocean water is usually given by a linear approx:
-\[\frac{\rho_a - \rho}{\rho_o} = \beta_S (S_a - S) - \beta_T (T_a - T)\]
-Where the subscript a denotes a quantity of the ambient conditions. $\beta_S$ and $\beta_T$ are expansion coefficients. Salinity exerts primary control on buoyancy since $T_a - T$ is very low \citep{hewitt_subglacial_2020}.
+Finally, to close of the discussion, I would like to focus the last chapter of my study on the effects of the curtain on the ice-shelf morphology. Specifically looking at the impact on lateral-stresses in the context of MISI/MICI/footloose effects. In particular on the reactive boundary shape \cite{bassis_upper_2012, holland_modeling_1999, chauche_iceocean_2014, bassis_stability_2024, little_how_2009, oleary_calving_2013}- how does the formation of cliffs/ice tongues, etc.. modify the stresses in the system (1D) and then perhaps lateral stresses (2D). 
+\subsection{Box Model}
+\cite{bacot_bubble_2022} empirically derived a scaling for the lengthscale of the recirculation cell, measured in the lighter fluid: 
 
-The freezing temperature is given by a linear liquidus function:
-\[T_L(S,z) = T_o + \lambda z - \Gamma S\]
-Where $T_o$ is a reference temperature, $\lambda$ is the slope of the freezing point depth, and $\Gamma$ is the saline dependence \citep{hewitt_subglacial_2020}.
 
-\subsubsection{Key Nondimensional Numbers}
-For laminar boundary layers next to a flat plate, the thickness of the velocity, thermal, and saline boundary layer thicknesses are given \citep{schlichting_boundary-layer_2017} in terms of the Prandtl ($Pr = \frac{\nu}{\kappa_T}$), Schmidt ($Sc = \frac{\nu}{\kappa_S}$, and Lewis ($Le = Sc/Pr$) numbers respectively: 
-\[\frac{\delta_T}{\delta_u} \simeq Pr^{-1/2} \approx 0.3\]
-\[\frac{\delta_S}{\delta_u} \simeq Sc^{-1/2} \approx 0.02\]
-\[\frac{\delta_S}{\delta_T} \simeq Le^{-1/2} \approx 0.07\]
-Where estimates are given by \cite{josberger_laboratory_1981}. 
-
-Grashof Number number for when the buoyant plume becomes turbulent:
-\[Gr = \frac{g (\rho_w - \rho_{\infty})l^3}{\rho_{\infty} \nu^2} \geq 10^9\]
-This happens at length scales greater than 0.5 m for oceanic salinity and temperatures \citep{josberger_laboratory_1981}.
-
-The Nusselt number is: \[Nu = \frac{qH}{k(T_w - T_f)}\] Where $T_w$ is the temperature of the wall, $T_f$ the far-field temperature of the fluid, $q$ the heat flux from the boundary with height $H$, and $k$ is the thermal conductivity of the fluid. 
-
-The Rayleigh number can also be written as:
-\[Ra = \frac{g \alpha H^3 (T_w - T_f)}{\kappa \nu}\]
-Where $g$ is the gravitational constant, $\alpha$ us the thermal expansion coefficient, $\kappa$ is the thermal diffusivity, and $\nu$ is the kinematic viscosity. 
-
-Empirically, \cite{warner_experimental_1968} find that:
-\[Nu = 0.10 Ra^{1/3}\]
-
-The Stefan number provides a ratio of the sensible heat to the latent heating:
-\[Sf = \frac{\rho_s L_s}{\rho_w c_w(T_w - T_i)}\]
-
-The Stanton numbers correspond to the transfer coefficients, given by \citep{jenkins_observation_2010, hewitt_subglacial_2020} as:
-\[St_T = C_d^{1/2} \Gamma_T\]
-\[St_S = C_d^{1/2} \Gamma_S\]
-
-\cite{mcphee_revisiting_2008} define a lumped Stanton number to approximate the melting equations with limited constraints:
-\[St = C_d^{1/2} \Gamma_{TS}\]
-
-Some literature \citep{gayen_simulation_2016} use the buoyancy ratio to denote the contributions between salinity vs temperature: 
-\[R_{\rho} = \frac{\beta_S (S_w - S_i)}{\beta_T (T_w - T_i)}\]
-\subsubsection{Melt/Dissolution Models}
-
-\cite{hewitt_subglacial_2020} define a modified latent heat: 
-\[\tilde{L} = L + c_i (T_L(S_i)-T_i)\]
-Which accounts for both release of latent heat from phase transition, and all the energy involved in warming the ice to melting temperature. 
-Since after melting, the fresh water will have some buoyancy relative to its surroundings, this can be written as an 'effective' temperature excess:
-\[\triangle T_i^{ef} = -\frac{\tilde L}{c}\]
-
-Finally, we may note that the boundary is in local equilibrium: 
-\[T_b = T_L(S_b)\]
-
-Starting with an energy balance at the phase change interface: 
-\[\dot m L  \; + \; \dot mc_i(T_b - T_i) =  St_T U c(T-T_b) \]
-Where the second term is given by the convective mixing by the turbulent plume the transfer coefficient is given by $St_T U$ where the thermal Stanton number is constant, $c$ is the heat capacity of the ocean water, and $U$ is the velocity of the plume (although sometimes includes tidal forcing) \cite{jenkins_observation_2010}. 
-
-Similarly, for salinity we can write: 
-\[\dot m (S_b - S_i) = St_SU(S-S_b)\]
-
-Alternatively, \cite{mcphee_revisiting_2008} propose a reduced model by take the temperature at the boundary to be the freezing point slightly outside the boundary (and with the lumped Stanton number). If one assumes that $T_L(S) - T_L (S_i) << \frac{\hat L}{c}$ i.e. that the difference in freezing temperatures of the ice and liquid is much less than the excess temperature, then we can write: 
-\begin{align}
-    \boxed{\dot m = St U c\frac{T - T_L(S)}{\tilde L}} \label{eq:melt-rate-simple}
-\end{align}
-or, a direct ratio of the thermal driving with the temperature excess. 
-
-\subsubsection{Plume Models}
-\cite{wells_geophysical-scale_2008} consider the formation of a turbulent plume off a vertical plate and describe a laminar region, a turbulent region with a laminar sublayer set by a balance between the viscosity and the buoyancy, and the outer plume by inertia and buoyancy, and finally, the top-most region where the sublayer width is controlled by the shear imposed by the turbulent plume. They give lengthscales and corresponding $Re_z$ and $Nu$ thresholds.
-
-Generally, once a developed, turbulent plume is reached, \cite{hewitt_subglacial_2020} write the mass, momentum, salt, and heat balances as: 
-\begin{align}
-    \frac{\partial}{\partial X}(DU) &= \dot e + \dot m \label{eq:plume_massbal}\\
-    \frac{\partial}{\partial X}(DU^2) &= D  \frac{\triangle \rho}{\rho_o} g \sin \phi - C_d U^2 \label{eq:plume_momentumbal}\\
-    \frac{\partial}{\partial X}(DUS) &= \dot e S_a+ \dot m S_i \label{eq:plume_salbal}\\
-    \frac{\partial}{\partial X}(DUT) &= \dot e T_a + \dot m T_i^{ef} \label{eq:plume_heatbal}
-\end{align}
-Where $D$ is the thickness of the plume, $\triangle \rho = \rho_a - \rho$ is the buoyancy or density deficit relative to ambient, $\dot e = E_o \sin \phi \; U$ us the assumed entrainment rate. $\dot m$ is given by Equation \ref{eq:melt-rate-simple}. Usually the melt rate has little mass contribution when compared to the entrainment rate but is significant in delivering cold freshwater for heat and salt balances and conversely the entraiment rate has little contribution to density. We can re-write everything in terms of density and temperature excess where we have substituted in Equation \ref{eq:melt-rate-simple}:
 
 \begin{align}
-    \frac{\partial}{\partial X}(DU) &=  E_o \sin \phi \; U\label{eq:simplified_massbal}\\
-    \frac{\partial}{\partial X}(DU^2) &= D  \frac{\triangle \rho}{\rho_o} g \sin \phi - C_d U^2 \\
-    \frac{\partial}{\partial X}(DU \triangle \rho) &= St U \frac{c \triangle T}{\tilde L} \triangle \rho_i^{ef}+ \sin \phi \frac{\mathrm{d} \rho_a}{\mathrm{d} z} D U \label{eq:buoyancy}\\
-    \frac{\partial}{\partial X}(DU \triangle T) &= E_o \sin \phi \; U \triangle T_a + St U \frac{c \triangle T}{\tilde L} \triangle T_i^{ef} - \lambda \sin \phi DU\label{eq:temp-deficit}
+L_{cell} = (0.62 \pm 0.02)(gq_{in})^{1/3} \sqrt{\frac{2H}{g'}} 
 \end{align}
 
-\subsection{Scaling and Limits}
+where $q_{in}$ is the input flux from the bubbles and $g' = g\frac{\rho_{\infty} - \rho_{ns}}{\bar{\rho}}$ is the reduced gravity, using the density difference on either side of the jet. 
 
-From Equation \ref{eq:simplified_massbal}, if we take the ambient conditions to be more or less uniform, we can assume a length scale for the flows: $D \approx E_o \sin \phi \; x$. If $\partial_X (DU\triangle \rho) \approx 0 $ or there is a negligible effect of adding meltwater as done by \cite{jenkins_convection-driven_2011} Equation \ref{eq:buoyancy} gives:
-\[ \triangle \rho' = \triangle \rho_{sg} \frac{q_{sg}}{D U}\]
-and similarly from \ref{eq:temp-deficit} we have:
-\[\triangle T' = \frac{E}{E + St} \triangle T_{a0}\]
-Where $\triangle T_{a0}$ is the initial ambient driving temperature.
+\subsubsection{Heat to the Near-shelf Box} \label{sec:heat_to_ns}
+Following from the derivation in Section 5.2 of \cite{bacot_bubble_2022}, we can determine the relative entrainment of fluid into the recirculation box $\alpha$ (and, subsequent flux into the near-shelf box via gravity current) by performing a mass balance and assuming the gravity current flux form of \cite{wilson_gravity_1990}.
 
-This gives the velocity constant:
-\[U' = (\frac{q_{sg}\triangle \rho_{sg} g \sin \phi }{\rho_o (E+C_d)} )^{1/3}\]
-Where $q_{sg}\triangle \rho_{sg}$ is given as the buoyancy flux from the subglacial discharge. As discussed by \cite{hewitt_subglacial_2020}, the subglacial flux has little contribution to the mass balance when compared to the entrainment so the flow behaves similar to an ideal plume. 
+The following process follows \citep{bacot_bubble_2022} using the picture from their paper (Figure \ref{fig:bacot-mass}). 
 
-In the limit of uniform ambient quantities, these exact solutions provide the following melt rate:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{bacot-mass.png}
+    \caption{Mass flux schematic from \cite{bacot_bubble_2022}}
+    \label{fig:bacot-mass}
+\end{figure}
+
+$q_H$ is the volumetric flux per unit length through the circulation cell. Observationally, $q_H$ can be related to the maximum surface velocity and, thus the prescribed bubble flux through:
+
+\begin{align} \label{eq:infiltration-flux}
+    q_H = 0.18(gq_{air})^{1/3}H = (0.205 \pm 0.007)L_{cell} \sqrt{g' H}
+\end{align}
+
+Looking at just the lighter fluid side, the entrainment of lighter fluid and deposition from the plume should balance the entrainment into the plume and, detrainment of recirculation fluid into the lighter side. Taking the density of the rising plume to be average of the two recirculation cells,
+\[\alpha q_H \rho_l + \frac{q_H}{2}(\rho_l' + \rho_d') = \alpha q_H \rho_l' + q_H \rho_l '\]
+By symmetry in the denser side, one obtains: 
+\[
+\begin{bmatrix}
+-\frac{1}{2} - \alpha & \frac{1}{2} \\
+\frac{1}{2} & -\frac{1}{2} - \beta
+\end{bmatrix}
+\begin{bmatrix}
+\rho_l' \\
+\rho_d'
+\end{bmatrix}
+ = 
+ \begin{bmatrix}
+- \alpha \rho_l \\
+- \beta \rho_d
+\end{bmatrix}
+\]
+Which can be inverted to find the densities of either circulation cell. Applying the definition of $q_H$ above and conservation of $q_H$ from one side to the other, 
+\begin{align} \label{eq:recirc_density}
+    \rho_l' = \frac{(\frac{1}{2}+ \alpha) \rho_l + \frac{1}{2}\rho_d}{\alpha + 1}
+\end{align}
+
+With $\alpha$ given solely by the control parameters: 
+\begin{align} \label{eq:alpha}
+    \alpha^3 + \alpha^2 =\frac{C_d^2}{18} \frac{g' H}{(g q_{air})^{2/3}} = \frac{C_d^2}{(7.5 \pm 0.5)}(\frac{H}{ L_{cell}})^2
+\end{align}
+where $C_d$ is a discharge coefficient accounting for flow contraction near an orifice, estimated to be around $C_d \approx 0.60$ for a weir/sharp edge. The value $(7.5 \pm 0.5)$ was computed using the empirical measurements obtained by \cite{bacot_bubble_2022} for the scaling of $L_{cell}$ above, depending on the density difference and bubble flux. Equation \ref{eq:alpha} yields a positive root $0 < \alpha < 1$ for any initial conditions.
+
+Back to our setting, from $\alpha$, one can obtain the per unit width heat transfer rate as: 
+\[\dot q_{ns} = \alpha q_H \rho_l' c_w (T_{cell} - T_{ns} )\]
+with $c_w$ taken the (constant) specific hat capacity of water and $\rho_l' = \frac{(\frac{1}{2}+ \alpha)\rho_{ns} +\frac{1}{2}\rho_\infty}{\alpha +1}$. This gives a relation for the heat flux from the recirculation cell in terms of the density difference and length of the cell:
+
+\begin{align} \label{eq:q_ns_Lcell}
+\dot q_{ns} = (0.205 \pm 0.007)c_w \alpha \frac{(\frac{1}{2}+ \alpha)\rho_{ns} +\frac{1}{2}\rho_\infty}{\alpha +1} L_{cell} \sqrt{g' H} (T_{cell} - T_{ns}) 
+\end{align}
+
+or alternatively, in terms of the control variables:
+
+\begin{align} \label{eq: q_jet_ICs}
+\dot q_{ns} =  0.18 c_w \alpha \frac{(\frac{1}{2}+ \alpha)\rho_{ns} +\frac{1}{2}\rho_\infty}{\alpha +1} (gq_{air})^{1/3}H (T_{cell} - T_{ns})
+\end{align}
+the heat transported to the near-shelf box by the density current is a product of the linear entrainment rate, buoyancy flux, and temperature difference. 
+
+\subsubsection{Heat Away from Near-shelf Box}
+Assuming a vertical (steep slope) boundary, heat flux through the conductive boundary layer can be related to the near-shelf flow via scaling arguments, as presented in \cite{wells_geophysical-scale_2008}. We can take
+$\dot q_{ice} = \rho_{ns} c_w \kappa \frac{\Delta T}{\delta}$
+with the conductive layer thickness $\delta$ given in two critical regimes: 
+\begin{enumerate}
+    \item buoyancy-controlled fluxes $Ra_{z} > 1.4 \times 10^5 Pr$, $\approx 10^6$ for water \\
+    \[\frac{1}{\delta}=(\frac{g'}{\kappa \nu Ra_{\delta}})^{1/3} \]
+    \item Shear-controlled after the breakdown of the laminar Blasius boundary layer $Re_{c} > 420$ \\
+    \[ \frac{1}{\delta} = \frac{\rho U}{\mu Re_{\delta}}\]
+\end{enumerate}
+
+In the latter case, this lines up with the model set out by \cite{mcphee_dynamics_1987, hewitt_subglacial_2020} which is what I will follow for now. I assume that transport at the boundary occurs relative to the plume's characterisitc velocity at the interface $U$. The heat flux per unit width of the tank should be given by: 
+
+\begin{equation} \label{eq:q_ice_U}
+    \dot q_{ice} = c_w  x St_T U \rho_{ns} (T_{ns} - T_L)
+\end{equation}
+where $x$ is the unit width volume of the box, $St_T \approx 1.1 \times 10^{-3}$ \citep{hewitt_subglacial_2020} is the thermal Stanton number that characterizes frictional heat transport, and $u_{ns}$ is the velocity of the turbulent plume in the wall that controls the thickness of the boundary layer. 
+
+
+\subsubsection{Temperature in the near-shelf ice} \label{sec:near-shelf-temp}
+From equations \ref{eq: q_jet_ICs} and \ref{eq:q_ice_U}, we can obtain the transient temperature in the near-shelf box by relating $ c_w \rho_{ns} x H \frac{\mathrm{d} T_{ns}}{\mathrm{d}t} = \Delta \dot{q}$.
+
+\[\frac{\mathrm{d} T_{ns}}{\mathrm{d}t} = 0.18\alpha \frac{(\frac{1}{2}+ \alpha) +\frac{\rho_\infty}{2 \rho_{ns}}}{\alpha +1}\frac{(gq_{air})^{1/3}}{x}(T_{cell} - T_{ns}) - \frac{St_T U}{H}(T_{ns}-T_L)\]
+Or, more generally:
+\begin{equation}
+    \frac{\mathrm{d} T_{ns}}{\mathrm{d}t} =\gamma_{ns}(T_{cell} - T_{ns}) - \gamma_{ice}(T_{ns}-T_L)
+\end{equation}
+
+Where  $\gamma_{ice} = \frac{St_T U}{H}$ is the friction-mediated heat transfer coefficient between the near-shelf box and the ice. Since density varies slowly with temperature $\frac{\Delta \rho}{\rho} = -\beta_T \Delta T$ (ignoring differences in salinity), with $\beta_T$ on the order of $10^{-4}$, I will assume that $\frac{\rho_\infty}{\rho_{ns}}$ is roughly constant in time. I absorb the density effects into the buoyancy-driven transfer rate $ \gamma_{ns} = 0.18\alpha \frac{(\frac{1}{2}+ \alpha) +\frac{\rho_\infty}{2 \rho_{ns}}}{\alpha +1}\frac{(gq_{air})^{1/3}}{x}$. In which case we have an equation of the form: 
+\begin{align} \label{eq:ODE-form}
+    \frac{\mathrm{d} y(t)}{\mathrm{d}t} = A + Bu(t) + Cv(t) - Dy(t)
+\end{align}
+with constants $A, B, C, D > 0$.
+We can write down a similar set of equations for the temperature evolution in the recirculation cell closest to the near-shelf box:
+\[\dot{q}_{in} = c_w \bar{\rho} q_H (T_{cell, hot} - T_{cell})\]
+where the heat transfer in is from the jet recirculation so the density introduced is $\bar{\rho} = \frac{\rho_{cell} + \rho_{cell, hot}}{2}$ which by symmetry, or otherwise using the density relation of Equation \ref{eq:recirc_density}, we can write $\bar{\rho} = \frac{\rho_{ns} + \rho_{\infty}}{2}$ . Using equation \ref{eq:q_ns_Lcell} for $\dot q_{ns}$:
+\[ c_w \rho_{cell} L_{cell} H \frac{\mathrm{d} T_{cell}}{\mathrm{d}t} = \dot{q}_{in} - \dot q_{ns}\]
 \begin{align}
-    \boxed{\dot m = \frac{ESt}{E+St}\frac{c \triangle T_{a0}}{\tilde L }(\frac{q_{sg}\triangle \rho_{sg} g \sin \phi }{\rho_o (E+C_d)} )^{1/3}}
-\end{align}
-
-A further length scale can be found by including the buoyancy term from Equation \ref{eq:buoyancy}:
-\[l_{\rho} = \frac{1}{\sin \phi}\left(\frac{E+C_d}{E}\right)^{1/2}\left|\frac{g}{\rho_o}\frac{\mathrm{d}\rho_a}{\mathrm{d}z}\right|^{-1/2}(\frac{q_{sg}\triangle \rho_{sg} g \sin \phi }{\rho_o (E+C_d)} )^{1/3}\]
-This is an important length scale where the buoyancy flux is lost to ambient stratification.
-
-Which then with the transformations $X = l_{\rho} \hat X$, $D = E l_{\rho} \hat D$, $U = U' \hat U$, and $\triangle \rho = \triangle \rho' \triangle \hat\rho$, $\triangle T = \triangle T' \triangle \hat T$ yield:
+ \frac{\mathrm{d} T_{cell}}{\mathrm{d}t} &= (0.205 \pm 0.007)\sqrt{\frac{g'}{H}} (\gamma_{cells}(T_{cell, hot}- T_{cell}) - \alpha (T_{cell} - T_{ns}))
+ \end{align}
+ 
+Where $g' = g\frac{\rho_{ns} - \rho_{\infty}}{\rho_\infty}$ captures the horizontal buoyancy and sets a general relaxation time for the problem. If we once again take this to be constant, we have another equation in the form of \ref{eq:ODE-form} with $\gamma_{cells} = \frac{(1+\alpha)(1+\frac{\rho_\infty}{\rho_{ns}})}{1+2\alpha+ \frac{\rho_\infty}{\rho_{ns}}}$ as the density-difference transport coefficient. 
+If we finally write this down for the temperature of the recirculation box extending into the ocean, we have:
 
 \begin{align}
-    \partial_{\hat X}(\hat D \hat U) &= \hat U \\
-    \partial_{\hat X}(\hat D \hat U^2) &= (1 + \hat{C_d})\hat D \triangle \hat \rho -  \hat{C_d} \hat U^2\\
-    \partial_{\hat X}(\hat D \hat U \triangle \hat \rho) &= - \hat D \hat U \\
-    \partial_{\hat X}(\hat D \hat U \triangle \hat T) &= (1+\hat St)\hat U \triangle \hat T_a - \hat St \hat{\dot m}
+    \frac{\mathrm{d} T_{cell, hot}}{\mathrm{d}t} &= (0.205 \pm 0.007)\sqrt{\frac{g'}{H}}\left(\gamma_\infty(T_\infty - T_{cell}) - \gamma_{cells, h}(T_{cell, hot} - T_{cell})\right)
 \end{align}
-Where $\hat C_d = C_d/E$, $\hat St = St/E$, $\triangle \hat T_a = \triangle T_a/T_{a0}$, and $\hat{\dot m} = \hat U \triangle \hat T$. 
+$\gamma_\infty =  \frac{\alpha + 1}{\frac{1}{2 \alpha}(1 +\frac{\rho_{ns}}{\rho_{\infty}}) + 1}$ is a reduced density between the ocean and the recirculation cell. Again, this is in the form of Equation \ref{eq:ODE-form}. 
 
-Simulations from \cite{hewitt_subglacial_2020} show that $X_{neg} \approx 1.44 l_{\rho}$ is when the plume becomes negatively buoyant and $X_{stop} \approx 2.06 l_{\rho}$ is when it comes to rest. 
+\subsection{Heat Transfer in Isolation}
+From the model above, we can write the coupled differential equations as below:
+\begin{align} \label{eq:matrix-ode}
+    \begin{bmatrix}
+    \dot T_{ns}\\
+    \dot T_{cell}\\
+    \dot T_{cell, hot}
+    \end{bmatrix} = \mathbf{A} \begin{bmatrix}
+    T_{ns}\\
+    T_{cell}\\
+    T_{cell, hot}
+    \end{bmatrix} + \begin{bmatrix}
+        \gamma_{ice} T_L \\
+        0 \\
+        (0.205 \pm 0.007)\sqrt{\frac{g'}{H}} \gamma_\infty  T_\infty
+    \end{bmatrix}
+\end{align}
 
-Another lengthscale $l_{sg}$ characterises when the buoyancy flux of submarine melting becomes more important than the subglacial discharge: 
-\[\boxed{l_{sg} = \frac{q_{sg} \triangle q_{sg}}{\dot m \triangle \rho_i^{ef}} = \left( \frac{\rho_o (E+C_d)}{g \sin \phi}\right)^{1/3}\left( \frac{E + St}{ESt}\right)\frac{\tilde L \triangle \rho_{sg}^{2/3} q_{sg}^{2/3}}{c \triangle T_{a0} \triangle \rho_i^{ef}}}\]
+Where
+\[\mathbf{A} = (0.205 \pm 0.007)\sqrt{\frac{g'}{H}}
+    \begin{bmatrix}
+     - \frac{\gamma_{ns} + \gamma_{ice}}{(0.205 \pm 0.007)\sqrt{\frac{g'}{H}}} & \frac{\gamma_{ns}}{(0.205 \pm 0.007)\sqrt{\frac{g'}{H}}} & 0\\
+    \alpha & -\left(\alpha + \gamma_{cells} \right) & \gamma_{cells}\\
+    0 & \gamma_{cells} & -(\gamma_\infty + \gamma_{cells})
+    \end{bmatrix}\]
 
-Finally, the depth dependence of the freezing point is significant on the timescale: 
-\[\boxed{l_T = \frac{\triangle T_{a0}}{\lambda \sin \phi}}\]
-\subsection{Previous Experiments}
-\cite{josberger_laboratory_1981} ran a lab experiment of melting ice walls in uniform far field salinity ($S_{\infty}$) and temperature ($T_{\infty}$), for $30 \% \leq S_{\infty} \leq 35 \%$ and $T_{\infty} \leq 20 \degree C$ (akin to bulk Oceanic conditions), they find that the boundary flow develops a bidirectional laminar flow from varying salinity and temperature boundary layer sizes which allows the inner to transition into a turbulent plume and the outer to sink to the bottom. 
-\cite{huppert_ice_1980} conduct a similar experiment, at a shorter scale, to investigate an ice block melting in a stably stratified ambient fluid, finding that the melt water spreads in nearly horizontally stratified layers. 
+When the dust settles, the fixed point $T_{ns}^*$, for which $\dot T = 0$ in every box, is given by:
+\begin{align}
+\boxed{ T_{ns}^* = \frac{(1-\Gamma_{ice})(1-\Gamma_{ns})(1-\Gamma_{\infty})}{1 - \Gamma_{\infty}(1-\Gamma_{ns}) - \Gamma_{ns}(1-\Gamma_{ice}) } T_{\infty} + \frac{\Gamma_{ice}(1 - \Gamma_{\infty}(1-\Gamma_{ns}))}{1 - \Gamma_{\infty}(1-\Gamma_{ns}) - \Gamma_{ns}(1-\Gamma_{ice}) } T_{L}}
+\end{align}
+With the relative weight of either boundary condition given by the coefficients: 
+\begin{itemize}
+    \item the relative efficiency of transport to the ice vs from the recirculation cell:\[\Gamma_{ice} = \frac{\gamma_{ice}}{\gamma_{ns} + \gamma_{ice}}\]  
+    \item the relative efficiency of transport out of the near-shelf recirculation cell vs between cells: \[\Gamma_{ns} = \frac{\alpha}{\gamma_{cells} + \alpha}\] 
+    \item the relative efficiency of transport into the cooler recirculation cell vs from the ocean: \[\Gamma_\infty = \frac{\gamma_{cells}}{\gamma_{cells} + \gamma_{\infty}}\] 
+\end{itemize}
 
-\cite{cenedese_impact_2016} conduct an experiment to study the heat flux and melting of an ice block in a two-layer stratified ambient fluid with a point source plume near the bottom. They found that melting increased with the strength of subglacial discharge. \cite{kerr_dissolution_2015} test the dissolution of a vertical ice wall by the turbulent plume generated from melting/dissolution only with a homogenous background fluid. In \cite{mcconnochie_effect_2016} the same experiments were repeated but for a stable salinity gradient in the far field, finding double diffusive patterns akin to \cite{huppert_ice_1980}. \cite{mcconnochie_enhanced_2017} study the effect of a freshwater plume near the ice face and find that the ablating velocity increases with the buoyancy flux of the source. 
+An example of the relaxation to steady-state is plotted in Figure \ref{fig:boxmodel-theoreticalsolve}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{1D-BoxModel.png}
+    \caption{Example of numerics used to solve Equation \ref{eq:matrix-ode} with initial conditions at freezing point at the near-shelf region, 4 deg C in the ocean.}
+    \label{fig:boxmodel-theoreticalsolve}
+\end{figure}
+
+\subsection{Salinity-mediated Transport}
+To add salinity to the model, we have to (i) account for a larger range of density variation due to the transport of salt, and (ii) explicitly model salt transport. 
+
+In the first case, we can simply make all the transfer coefficients explicitly depend on the salinity and temperature in the cell $\gamma = \gamma(\rho(S(t),T(t)) \approx \gamma(\rho(S(t))) $ which requires the transfer coefficients to be recalculated at each timestep. 
+
+Next, we can similarly model the transfer of salinity via the mass intrusion at each box. 
+\[xH\dot{S}_{ns, in} = \alpha q_{H}  (S_{cell} - S_{ns})\]
+
+Similarly if we assume that the transport at the ice shelf is based on the same plume velocity, $U$, we have: 
+
+\[x H \dot S_{ns,out} = x St_S U (S_{ns} - S_{ice})\]
+Where the salinity input from the shelf melting can be taken to be zero in the typical case. 
+
+So the change in salinity in the near-shelf region can be computed:
+
+\begin{align} \label{eq:S_ns}
+    \dot S_{ns} &= \frac{q_H}{x H} \left[\alpha  S_{cell} + \chi_{ice} \frac{x H}{q_H}S_{ice} -(\alpha + \chi_{ice} \frac{x H}{q_H} ) S_{ns}\right]
+\end{align}
+with the transfer coefficient:
+\[\chi_{ice} = \frac{St_S U}{H} \]
+Similarly, 
+\begin{align} \label{eq:S_cell}
+    \dot S_{cell} &= \frac{q_H}{H L_{cell}} \left[ S_{cell,hot} + \alpha S_{ns} - (1+ \alpha)S_{cell} \right]
+\end{align}
+
+\begin{align} \label{eq:S_cell_hot}
+    \dot S_{cell,hot} &= \frac{q_H}{H L_{cell}}\left[\alpha S_{\infty} + S_{cell}  -   (1 + \alpha)S_{cell,hot} \right]
+\end{align}
+I assume that $\dot S_{\infty} = \dot S_{ice} = 0$, this gives the following set of equations to solve: 
+\begin{align} \label{eq:matrix-ode}
+    \begin{bmatrix}
+    \dot S_{ns}\\
+    \dot S_{cell}\\
+    \dot S_{cell, hot}
+    \end{bmatrix} = \mathbf{A} \begin{bmatrix}
+    S_{ns}\\
+    S_{cell}\\
+    S_{cell, hot}
+    \end{bmatrix} + 
+    \begin{bmatrix}
+        \chi_{ice} S_{ice} \\
+        0 \\
+       \frac{\alpha q_H}{L_{cell} H}S_\infty
+    \end{bmatrix}
+\end{align}
+
+where
+\[\mathbf{A} = \frac{q_H}{HL_{cell}}
+    \begin{bmatrix} 
+     - (\alpha \frac{L_{cell}}{x} + \frac{\chi_{ice}H L_{cell}}{q_H}) & \frac{\alpha L_{cell}}{x} & 0\\
+     \alpha & -(1+\alpha) & 1\\
+    0 & 1& -(1 + \alpha) 
+    \end{bmatrix}\]
+    
+Now, since the coefficients are density-independent, $\mathrm{d}_t \mathbf{A} = 0$, so the salinity profiles should all exactly follow a linear relaxation to their final values, with $S_{cell, h}^* = \frac{1+\alpha}{2-\alpha}S_\infty$, $S_{cell}^* = \frac{1}{2-\alpha}S_\infty$ and, $S_{ns}^*$ given by:
+\begin{align}
+    \boxed{S_{ns}^* =\frac{\frac{\alpha q_H}{2+\alpha}S_{\infty}+  xH\chi_{ice} S_{ice}}{\frac{\alpha q_H}{2+\alpha} + xH\chi_{ice}} }
+\end{align}
+
+\subsection{Generalization for Laboratory Experiments}
+In the lab, we want to simulate the input from melting as a general flux, $q_{fresh}$. In which case the effect on the heat and salt balance are given by replacing the fluxes out of the near-shelf with:
+\[xH \dot q_{ns,out} = q_{fresh} \rho_{fresh} c_w(T_{ns}-T_{L})\]
+\[x H \dot S_{ns,out} = q_{fresh} (S_{ns} - S_{fresh})\]
+In the above cases, the temperature contribution term $\gamma_{ice}= \frac{St_TU}{H}$ can be replaced with $\gamma_{ice} = \frac{q_{fresh}}{xH} \frac{\rho_{fresh}}{\rho_{ns}}$ and in the salinity term, $\chi_{ice} =  \frac{St_S U}{H}$ with $\chi_{ice} = \frac{q_{fresh}}{xH}$. We now find that:
+\begin{align}
+    S_{ns, flux}^* =\frac{\frac{\alpha}{2+\alpha}\frac{q_H}{q_{fresh}}S_{\infty}+ S_{ice}}{\frac{\alpha}{2+\alpha}\frac{q_H}{q_{fresh}} + 1}
+\end{align}
+In the limit of large infiltration flux across the curtain compared to the freshwater source, $\frac{q_H}{q_{fresh}} >> \mathcal{O}(1)$, the equilibrium near-shelf salinity is given by $S_{ns}^* = \frac{S_\infty}{2-\alpha}$. On the other hand, strong forcing from freshwater flux $\frac{q_H}{q_{fresh}} << \mathcal{O}(1)$ results in $S_{ns}^* = S_{ice}$. 
+
+From Equation \ref{eq:infiltration-flux}, we have that $q_H \approx 8.86 (Q_{air})^{1/3}$ both in LPM, so for pump values around 1 LPM, the freshwater flux should vary from 0.1 LPM to over 10 LPM.
+For the initial values $x = 1$, $q_{air} = 0.015$, $q_f = q_{air}/10$, $\rho_f = 1000$, $S_{\infty} = 33.8$, $H = 0.15$,  $U = 1$, the results look like:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Generalized-model-outputs.png}
+    \caption{Output of system with initial  salinity gradient relaxing to the final equilibrium values. }
+    \label{fig:gen_output}
+\end{figure}
+
+\newpage
+To understand the impact of the amount of flux on the final settling temperatures, I plotted the time evolution of the salinity of in the near-shelf box as a ratio of the ocean salinity for varying ratios of $q_{fresh}/q_{air}$ below:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{SalinityContourQfresh.png}
+    \caption{The salinity ratio between the near-shelf box and the ocean box as a function of time and prescribed freshwater flux.}
+    \label{fig:salinity-flux-contour}
+\end{figure}
+\newpage
+
+\section{Generating Experimental Parameters}
+In this study, there are a few key variables of interest: 
+\begin{itemize}
+    \item $\Delta S$ - the difference in salinity between the ocean and the near-shelf box, initially. 
+    \item $H$ - the height of the water column.
+    \item $x$ - the distance of the curtain from the freshwater source (effectively, how large the near-shelf region is).
+    \item $Q_{air}$ - the volumetric flux of air through the bubble curtain. 
+    \item $Q_{fresh}$ - the flux of freshwater which parametrizes input from ice shelves; this is reframed in the study as $r = \frac{q_H}{q_{fresh}}$, the ratio of some measure of infiltration flux across the curtain to the input of freshwater into the system. 
+\end{itemize}
+
+Since the parameter space is pretty large, the following procedure is used to calculate the experimental values to use: 
+\begin{enumerate}
+    \item pick $\Delta S$, specifically for each chamber. Measure the values to confirm. 
+    \item pick $x$, $H$ - From empricially derived optimal deflection modulus (cf. $D_m = 0.12$ from \cite{bacot_bubble_2022})calculate the theoretical $Q_{air}$ required. 
+    \item with the deflection modulus, compute $\alpha$, $q_H$ and expected mixed densities.
+    \item Find $r$ through $Q_{fresh}$ (out of curiosity).
+    \item with the same value for $Q_{dense} = Q_{fresh}$ calculate $S_{dense}$ for the amount of salinity to feed into the denser box for a steady-state value in the ocean box to simulate the desired $\Delta S$. 
+\end{enumerate}
+During the experiment, the density of the ocean and near-shelf boxes should be pre-mixed and measured. The flow rates of either side will be confirmed with a graduated cylinder test. 
+\subsubsection{Estimates from Geophysical Contexts}
+The frictional velocity used by \cite{holland_modeling_1999} was on the order of 0.01 $m/s$ (or, a mixed layer velocity of $0.2 \; m/s$), in \cite{mcconnochie_enhanced_2017}, it was experimentally found that the onset of a shear-driven turbulent regime happens for velocities greater than $0.04 \; m/s$. I will estimate that the velocity on the edge of a plume should be roughly $0.1 \; m/s$ to put a control on the freshwater flux. Then, $q_{fresh}$ also acts as a control for my box size. 
+
+\[Q_{fresh} = W x \frac{St_T U \rho_f}{\rho_{ns}}\]
+I will assume that the density of freshwater is close to the density of water in the near-shelf region, so with $W = 0.1 m$ fixed by the tank, we get an estimate 
+\begin{align} \label{eq:q_f-exp-x}
+    Q_{fresh} = 10^{-5} x
+\end{align}
+\todo{think about non-dimensionalizing the lengthscales?}
+\todo{ask Jerome about keeping $x$ and $Q_{air}$ separate?}
+\begin{table}[]
+    \centering
+    \begin{tabular}{c |c | c | c }
+    $H\; [cm]$ & $x \; [cm]$ & $Q_{fresh} \; [LPM]$& $\Delta S \; [g/kg]$ \\
+    \hline
+        15  &  20 & 0.12 & 30\\
+        15  &  175 & 1.05 & 30\\
+    \end{tabular}
+    \caption{First set of experimental parameters, $H$, $\Delta S$, $x$, and $r$ are all prescribed. $Q_{fresh}$ is determined through relation \ref{eq:q_f-exp-x}.}
+    \label{tab:experimental_params}
+\end{table}
+\section{Evolution of the Ice-shelf Interface}
+Using $\phi$ as the local gradient of the shelf:
+\[ \sin \phi = \frac{\mathrm{d}z}{\mathrm{d}X}\]
+and taking the ice-melt process to be in local thermal equilibrium, we can write the change in the slope as a function of the total melting:
+\[ \sin \phi \frac{\partial \phi}{\partial t} = \frac{\partial \dot m}{\partial X}\]
+
+Using the simplified model set out by \cite{mcphee_revisiting_2008} $\dot m = \frac{St c U}{\tilde L}(T - T_L(S, z))$, where $St$ is a generalized Stanton constant for transport, we can write in general that: 
+
+\begin{align} \label{eq:local-slope}
+    \sin \phi \frac{\partial \phi}{\partial t} = \frac{St \; c}{\tilde L}\left( (T - T_L(S)) \frac{\partial U}{\partial X} + U(\frac{\partial}{\partial X}(T + \Gamma S) - \lambda \sin \phi)\right)
+\end{align}
+With $\Gamma$ as the coefficient in the liquidus temperature relation capturing the effect of salinity and $\lambda$ capturing the effect of hydrostatic pressure. $T$, $U$, and $S$ all vary along the shelf with variable $X$. $U$ is typically taken as the velocity of the plume. Since the timescale for changing the shelf profile via melt are much longer than the development of the plume and turbulent effects, it's safe to assume that these variables are steady $\partial_t U = \partial_t T = \partial_t S = 0$.
+One can see that for a constant plume speed, the only contribution to the steepening is given by the ambient stratification. 
+
+\subsection{Steady, Unstratified Flow}
+In the limit that the near-shelf water is both unstratified and steady, we have simply that $\sin \phi (\partial_t \phi - \lambda U) = 0$ or, for all angles shallower than $\pi/2$:
+
+\[ \phi(t) = \lambda U t + \phi_o\]
+
+The local slope is uniform with height and will increase linearly with time until a vertical wall $\sin \phi = 0$ is formed and will remain, as a steady final state. This will happen within $t_{vertical} = \frac{\frac{\pi}{2} - \phi_o}{\lambda U}$.
+
+If we instead assume that the velocity in the plume decreases linearly with height due to entrainment of the ambient, unstratified fluid, we can write:
+
+\[ \sin \phi \left(\frac{\partial \phi}{\partial t} + \lambda U \frac{St \; c}{\tilde L} \right) = \frac{St \; c}{\tilde L} (T - T_L(S)) \frac{\partial U}{\partial X}\]
+It is helpful to nondimensionalize the temperature $\Delta \tilde{T} \equiv \frac{St \; c}{\tilde L} (T - T_L)$ and write the pressure-induced liquidus effect as $\tilde{\lambda} = \lambda \frac{St \; c}{\tilde L}$ with units of $[1/m]$, and with \[\gamma \equiv \frac{St \; c}{\tilde L} (T - T_L(S)) \frac{\partial U}{\partial X} = \frac{\partial U}{\partial X} \Delta \tilde T\] constant, we obtain:
+\[ \sin \phi \left(\frac{\partial \phi}{\partial t} + \tilde \lambda U  \right) = \gamma\]
+
+Which can be solved through separation of variables:
+\[\int_{\phi_o}^{\phi} \frac{\gamma}{ \sin \phi'} - \tilde \lambda U \; \mathrm{d} \phi' = \int_0^{t} \mathrm{dt}'\] 
+Applying the Weierstrass transformation, one obtains the general solution: 
+
+\begin{align}
+    t(\phi) = \frac{2}{\tilde \lambda U \sqrt{1- \epsilon^2}} \left(\arctan(\frac{\tan(\frac{\phi}{2})- \epsilon}{\sqrt{1 - \epsilon^2}}) - \arctan(\frac{\tan(\frac{\phi_o}{2})- \epsilon}{\sqrt{1 - \epsilon^2}})\right) - \frac{\phi - \phi_o}{\tilde{\lambda} U}
+\end{align}
+Where $\epsilon = \frac{\tilde \lambda U}{\gamma}$. 
+\subsubsection{Small slope approximation}
+For very small angles, one can Taylor expand the expression to obtain: 
+\[t(\phi) \approx \frac{\phi_o}{\tilde \lambda U} - \frac{2}{\tilde \lambda U \sqrt{1- \epsilon^2}}\left( \arctan(\frac{\tan (\frac{\phi_o}{2})-\epsilon}{\sqrt{1-\epsilon^2}} + \frac{\epsilon}{\sqrt{1-\epsilon^2}})\right) + \frac{1}{2 \gamma} \phi^2\]
+which is notably even in $\phi$.
+Inverting, we find that: 
+
+\begin{align}
+    \phi (t) \approx (\frac{t-t_o}{\tau})^{1/2}
+\end{align}
+
+Where \[t_o = \frac{\phi_o - \frac{2}{\sqrt{1-\epsilon^2}}\left(\arctan(\frac{\tan (\frac{\phi_o}{2})-\epsilon}{\sqrt{1-\epsilon^2}}) + \frac{\epsilon}{\sqrt{1-\epsilon^2}}\right)}{\tilde \lambda U}\] is the time at which the slope was entirely horizontal (locally), and $\tau = \frac{\tilde \lambda U}{2 \gamma}$ is the timescale over which $\phi$ grows by a power of 2. 
+If we take that the velocity goes like $U(X) = - k X$ for some constant $k > 0 $, then $\tau$ looks like $\frac{\tilde \lambda X}{2 \Delta \tilde T}$
+
+\begin{align}
+    \phi (X,t) \approx (\frac{2 \tilde l}{ X}(t-t_o))^{1/2}
+\end{align}
+Now with the lengthscale $\tilde l = \frac{\Delta \tilde T}{\tilde \lambda}$ Now I can taylor expand $t_o$ around $\epsilon << 1$ (assuming variation in frictional heating in the $\gamma$ term is much larger than the pressure-driven freezing point $\tilde \lambda U$) and substitute in that $\epsilon = \frac{X}{\tilde l}$ to find:
+\[t_o \approx \frac{2}{\tilde{\lambda} \tilde{l} k}(1-\cos^2(\frac{\phi_o}{2}))-\phi_o  -\phi_o\frac{1}{\tilde \lambda k X}\]
+
+Finally, we have: 
+\begin{align}
+    \phi (X,t) \approx (\frac{2 \tilde l}{ X}(t-\frac{2}{\tilde{\lambda} \tilde{l} k}(1-\cos^2(\frac{\phi_o}{2})) + \phi_o  +\phi_o\frac{1}{\tilde \lambda k X}))^{1/2}
+\end{align}
+
+What are the boundary conditions I need to impose on this?? IDK  - is this even well-posed???
+
+Taking a snapshot in time, the slope varies inversely with height, following a power law. This profile develops with the square-root of time. 
+\subsubsection{Large slope Approximation}
+This approximation holds at least characteristically well for small $\epsilon$ and $\phi$ but after the steepening approaches the vertical, a similar Taylor expansion around $\pi$ yields: 
+\[t=t_o -\frac{\epsilon}{\tilde \lambda U}(\pi-\phi)^2\]
 \section{Experimental Designs}
-\subsection{Control Tests}
-These series of controlled tests are designed to illustrate the melting and heat/mass transport by the turbulent plume only (in the natural ocean context). In general, I am interested in measuring: 
-\begin{enumerate}
-    \item temperature at various heights at the interface.
-    \item the temperature of the bulk ambient fluid.
-    \item the salinity in the bulk ambient fluid. 
-    \item the salinity near the mixing region.
-    \item the shape and size of the turbulent plume, perhaps a visualization of the surrounding entrained fluid.  
-    \item the average velocity of the plume. 
-\end{enumerate}
-\subsubsection{Uniform $T_{\infty}$, $S_{\infty}$, No Subglacial Discharge}
-This test will mimic \cite{kerr_dissolution_2015} with a uniform ambient salinity and temperature. Key measurements are 1) the rate of ice dissolution/melting, the temperature at the boundary as this happens, and the turbulent plume's corresponding velocity and shape. Notably, none of the past experiments seem to measure the continuous density distribution. It would be nice to estimate a length scale for entrainment as in \cite{bacot_bubble_2022}.
+We start by mapping out the steady-states of this system by simulating the effect of that $q_{fresh}$ boundary. Daria suggested measuring the width of a fresh-water layer from a direct plume. 
 
-\subsubsection{Two-tier stratified $T_{\infty}$, $S_{\infty}$, No Subglacial Discharge}
-Potentially skip but just as an analog to the Greenland fjords and to reference with \cite{cenedese_impact_2016}.
-\subsubsection{Stratified Ambient Dissolution and Melting only}
-Now no subglacial plume source, to simulate something along the lines of \cite{mcconnochie_effect_2016}.
-\subsubsection{Dissolution and Melting with Subglacial Plume}
-Now with apparatus like \cite{cenedese_impact_2016}. \\
-Vary:
+The variables we have control over are: 
 \begin{enumerate}
-    \item subglacial discharge strength
-    \item stratification strength (density) - likely temperature first
-    \item ice topology (perhaps shallower shelf extents which has not been done by the experiments of \cite{mcconnochie_enhanced_2017} etc... 
+    \item $q_{air}$ flux input of bubbles, precision questionable - MK to plot time that it takes to fill up a graduated cylinder of known volume as a function of voltage for all of the pumps. 
+    \item $\Delta \rho$ difference in density between the two compartments.
+    \item $H$ the vertical lengthscale (which, generally is only involved, alongside the density difference, in determining the timescale that it takes to relax to the final state)
+    \item $x$, the distance to the freshwater source
 \end{enumerate}
 
-\subsection{Full Experiments}
-Finally, it's time to add a secondary barrier plume! The main parameters to adjust are: 
-\begin{enumerate}
-    \item strength of plume
-    \item normal distance from the ice wall 
-    \item size of bubbles
-\end{enumerate}
-Further, I would like to image the extent of this plume/mixing with the near-shelf water as well. 
+\subsubsection{Nondimensionalisation}
+the distance from the near-shelf box doesn't impact the transport of salinity or heat in the box model, just the timescale to equilibrate. 
+\subsection{Bubble Plume Dynamics}
 
-\subsection{Future experiments}
-The lengthscale of these flows are often large enough that they experience Coriolis effects. 
+\href{https://www.amazon.co.uk/Aquarium-Portable-Aerator-Bubbler-Silicone/dp/B093GR8HRQ/}{Amazon aerator pumps} were purchased for the production of the bubble curtain and driven through DigiFlow by the aerator pump code, an amplifier circuit was used to provide power to the pumps, up to an alleged voltage of 10V. These are all connected in parallel and then redistributed evenly. 
 
+
+\subsection{Bubble Size Distribution}
+Using just the porous stone spargers with one pump set to 2.6V, the bubble size was found to be slightly less than 1.2 mm, with an average around 1 mm - see the plot below:
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Sparger-BubbleDist.png}
+    \caption{Bubble size distribution out of a porous stone sparger for varying driving voltages.}
+    \label{fig:stone-sparger-191125}
+\end{figure}
+
+\todo{get the bubble size distribution as a function of height with the averaged pumps, as a function of voltage. }
+
+\subsection{Dye Attenuation}
+To calibrate the dye attenuation, I followed \cite{allgayer_application_2012} and \cite{bacot_bubble_2022} in mixing a 2 ppm mixture of methylene blue and diluting it into a tank backlit with a fixed intensity LED at different concentrations. I obtained intensity values both spatially and temporally averaged with a red filter on top to isolate out the spectral uncertainty from the methylene blue. The final calibration values are below: 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{MethyleneBlue-Calibration.png}
+    \caption{Calibration Curve for Methylene blue at different concentrations with the line of best fit given by $- \ln{\frac{I(c)}{I_o}} = (3.62 \pm  0.03)[c]$}
+    \label{fig:placeholder}
+\end{figure}
+
+This quality of data is similar to what \citep{bacot_bubble_2022} found in their study. Moving forward, I calibrated this to density measurements by separating the tank into two boxes, taking a calibration picture, then adding denser salt water to one side and dyeing it with methylene blue. I then removed the barrier to allow the gravity current to develop, and shut the barrier again to mix either side and obtain intermediate density samples. A second picture was taken once the barrier was put in place and compared to readings from the Anton Par 5200 Density Meter. I found agreement within 0.0003 $g/cm^3$ for the intermediate measurements.
+
+\todo{determine errors from the dye attenuation experiment.}
 \section{Experimental Apparatus}
 \subsection{General Apparatus}
-\cite{kerr_dissolution_2015} use a  JulaboFP50 Refrigerated–Heating Circulator to rapidly cool the water and freeze into ice within the tank (then pumping excess liquid out/new liquid in). 
 
 \cite{kerr_dissolution_2015} also use a 20 mm thick layer of acrylic with a 2 mm thick outer layer, separated by a 18 mm air gap to insulate the ice. 
-\subsection{Oceanic Conditions}
-For a set of experiments, a stably stratified salinity distribution and varying temperature distribution is required for the ambient surrounding waters. This can be accomplished with a two-bucket drip method as outlined by \cite{oster_density_1963}, or as a series of horizontally stratified layers with the spinning plate apparatus in the lab at DAMTP.
-\subsection{Ice}
-The ice will need to be produced and frozen without bubbles and in a large block (>1 m tall). This should be sorted out with the lab people. 
-\todo{Speak with }
 \subsection{Bubble Curtain}
-Nozzle, adjustability for distance away from the ice shelf. 
+Nozzle, adjust-ability for distance away from the ice shelf. 
 \subsection{Measurement}
 \begin{enumerate}
     \item Temperature measurement - in the ice, at the surface, and some distance from the plume; various heights. \cite{cenedese_impact_2016} use TenHOBO Pro v2 temperature dataloggers.
     
-    \item Salinity - sampled at various heights outside of the plume with a traversing conductivity-temperature probe
+    \item Salinity - sampled at various heights outside of the plume with a traversing conductivity-temperature probe?
 
     \item Ablation rate - usually done by taking two adjacent pictures, \cite{mcconnochie_effect_2016} take them 25 - 50 mins apart with repetition for the variance
 
@@ -226,10 +468,14 @@ Nozzle, adjustability for distance away from the ice shelf.
 \end{enumerate}
 \subsection{Visualization}
 \begin{enumerate}
-    \item camera
-    \item dye, potassium permanganate crystals and streaking
-    \item \cite{mcconnochie_enhanced_2017} use a PIV system for visualizing the plume velocity. 
+    \item  Recording camera, \citep{bacot_bubble_2022} use a Nikon D7000 video camera at 24 frames per second. \citep{mcconnochie_effect_2016} use a Nikon D100 DSLR for shadowgraphs.
+    \item \cite{mcconnochie_enhanced_2017} use a PTV system for visualizing the plume velocity. 
 \end{enumerate}
+\subsection{Oceanic Conditions}
+Potentially, for later experiments, a stably stratified salinity distribution and varying temperature distribution is required for the ambient surrounding waters. This can be accomplished with a two-bucket drip method as outlined by \cite{oster_density_1963}, or as a series of horizontally stratified layers with the spinning plate apparatus in the lab at DAMTP.
+
+
+\section{Preliminary Testing}
 
 \bibliographystyle{apalike}
 \bibliography{references}
